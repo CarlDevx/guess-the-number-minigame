@@ -10,7 +10,22 @@
         <script src="js/game.js" defer></script>
     </head>
     <body>
-
+        <main>
+            <!--initial textConteiner-->
+            <div class="text">
+                <span class="gameTile"><h1>Guess_<i>The</i>_Number</h1></span>
+                <p class="title">Bem Vindo(a)!</p>
+                <h3>digite um numero entre 0 e 10 para começar.</h3>
+            </div>
+            <div class="inputs">
+                <input type="number" id="numberInput"/>
+                <button onclick="game.checkNumber(document.getElementById('numberInput'))">chutar</button>
+                <br>
+                <input type="checkbox" name="saveScore_checkbox" id="saveScore_checkbox"/>
+                <label for="saveScore_checkbox">Save High Score?</label><br>
+                <button onclick="game.restartGame()">ResetGame</button>
+            </div>
+        </main>
     </body>
 
 </html>
