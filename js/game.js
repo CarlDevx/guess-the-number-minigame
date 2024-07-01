@@ -1,39 +1,37 @@
 class Game  {
     secretNumber = 0;
-    tries = 0;
-    contructor(maxTries){
-        this.maxTries = maxTries;
-        }
+    tries = 1;
+    maxTries = 3;
     start(maxRange){
         this.secretNumber = Math.floor(Math.random()*maxRange+1);
-        console.log(this.secretNumber)
     }
     checkNumber(inputTarget){
-        if (inputTarget.value == ""){
-            alert("insira um numero valido antes de continuar")
-        }
-        else{
             let userInput = parseInt(inputTarget.value);
-            if (userInput < 0 || userInput > 10){
-                alert("insira um numero entre 0 e 10")
-            }
-            if(userInput == this.secretNumber){
-                this.win(); 
-            }
-            else{
-                if (userInput != this.secretNumber){
-                    if (this.tries < this.maxTries){
-                        this.tries++;
+            switch(userInput){
+                case this.secretNumber: 
+                    this.win();
+                break;
+                default:
+                    if (userInput > 10 || userInput < 0){
+                        alert("insira um numero valido entre 0 e 10");
+                        break;
                     }
-                    else {
-                        this.gameOver();
+                    else{
+                        if (this.tries < this.maxTries){
+                            alert("voce errou, restão apenas " + (this.maxTries-this.tries) + " tente novamente!");
+                            this.tries = this.tries + 1;
+                            break;
+                        }
+                        else{
+                            this.gameOver();
+                        }
                     }
+                break;
                 }
             }
-        }
-    }
     win(){
-     alert("voce venceu.");   
+        alert("voce venceu.");
+        this.restartGame();
     }
     gameOver(){
         window.alert("você perdeu.");
@@ -52,5 +50,5 @@ function StartupAnim(){
     
 }
 let game =  new Game();
-game.start(3);
+game.start(10);
 StartupAnim();
