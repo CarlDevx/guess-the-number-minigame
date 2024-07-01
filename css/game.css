@@ -1,3 +1,75 @@
 *{
-    background-color: aquamarine;
+    background-color: #4c061d;
+    color:#b4c292;
+    border: none;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    width: 100%;
+    overflow: hidden;
+}
+main{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.CircleAnim{
+    width: 115vw;
+    height: 115vw;
+    border-radius: 50%;
+    background-color:#b4c292;
+    position: absolute;
+}
+.animStart{
+    animation: circleIN 1s ease-in-out forwards;
+}
+.text{
+    margin-bottom:6rem;
+    text-align: center;
+}
+.text span{
+    font-size: 34px;
+}
+.text p {
+    font-size: 28px;
+}
+.text h3{
+    font-size: 24px;
+}
+.inputs #checknumber{
+    font-size: 30px;
+    border:#b4c292 1px solid;
+    padding: .5rem 1.5rem .5rem 1.5rem;
+    border-radius: .7rem;
+    transition: all .3s;
+}
+.inputs #checknumber:hover{
+    color: #4c061d;
+    background-color: #b4c292;
+}
+.inputs input[type=number]{
+    font-size: 30px;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+.inputs input[type=number]:focus{
+    outline:none;
+}
+.inputs #resetButton{
+    font-size: 16px;
+}
+@keyframes circleIN {
+    0%{
+        width: 115vw;
+        height: 115vw;
+    }
+    100%{
+        width: 0;
+        height: 0;
+    }
 }

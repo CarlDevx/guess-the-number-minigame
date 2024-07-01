@@ -1,5 +1,6 @@
 class Game  {
     secretNumber = 0;
+    tries = 0;
     contructor(maxTries){
         this.maxTries = maxTries;
         }
@@ -19,6 +20,16 @@ class Game  {
             if(userInput == this.secretNumber){
                 this.win(); 
             }
+            else{
+                if (userInput != this.secretNumber){
+                    if (this.tries < this.maxTries){
+                        this.tries++;
+                    }
+                    else {
+                        this.gameOver();
+                    }
+                }
+            }
         }
     }
     win(){
@@ -26,11 +37,20 @@ class Game  {
     }
     gameOver(){
         window.alert("você perdeu.");
+        this.restartGame();
     }
     restartGame(){
         window.location.reload();
     }
 }
-
+function StartupAnim(){
+    let circle = document.querySelector(".CircleAnim");
+    circle.classList.add("animStart");
+    setTimeout(()=>{
+        circle.remove()
+    },1000)
+    
+}
 let game =  new Game();
-game.start(10);
+game.start(3);
+StartupAnim();
