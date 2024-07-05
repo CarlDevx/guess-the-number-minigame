@@ -71,5 +71,59 @@ main{
     100%{
         width: 0;
         height: 0;
+    }   
+}
+@keyframes circleIN_320 {
+    0%{
+        width: 120vh;
+        height: 120vh;
+    }
+    100%{
+        width: 0;
+        height: 0;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    *{
+        overflow: hidden;
+    }
+    .CircleAnim{
+        width: 120vw;
+        height: 120vw;
+    }
+    .text span{
+    margin: 0 0 1rem 0;
+    font-size: .7rem;
+    }
+    .text p{
+        font-size:.9rem;
+        margin: .1rem 0 0 0;
+    }
+    .text h3{
+        margin: .02rem 0 0 0;
+        font-size: .8rem;
+    }
+    .animStart{
+        animation: circleIN_320 1s ease-in-out forwards;
+    }
+    .inputs{
+        width: 18rem;
+        display: flex;
+        flex-direction: column;
+    }
+    .inputs input[type=number]{
+        font-size: 1.5rem;
+        padding: .5rem .5rem .5rem .5rem;
+        border: 1px solid #b4c292;
+        border-radius: .7rem;
+    }
+    .inputs input[type=number]::placeholder{
+        opacity: .2;
+        color: #b4c292;
+    }
+    .inputs #checknumber{
+        font-size:1rem;
+        border-radius: .7rem;
     }
 }
