@@ -6,3 +6,5 @@
 - This Project is **PURE JS**.
 - _Object Orientation_ used for the "_game engine core_".
 - _CSS3_, HTML5 (_Semantic HTML_) and _MediaQuieries_ for layout construction and responsivity.
+## Try this game.
+- [Launch Guess_the_Number.js](https://carldevx.github.io/guess-the-number-minigame/)
